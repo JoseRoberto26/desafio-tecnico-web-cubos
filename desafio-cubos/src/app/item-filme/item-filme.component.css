@@ -1,0 +1,32 @@
+.container-box{
+    width: 70%;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.filme-img{
+    position: initial;
+    width: 20%;
+    height: 20%;
+}
+
+.filme-header{
+    background-color: #106A99;
+    float: right;
+    width: 80%;
+}
+
+.filme-body{
+    float: right;
+    width: 79%;
+    background-color: rgb(233, 229, 229);
+}
+
+h1{
+    color: #02D7DA;
+    margin-left: 150px;
+}
+
+h1, p{
+    font-family: 'abel', 'lato';
+}
