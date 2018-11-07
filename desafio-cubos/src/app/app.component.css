@@ -3,9 +3,9 @@ background-color: #106A99;
 width: 100%;
 padding: 10px, 0px, 0px, 10px;
 text-align: center;
-position: fixed;
 top: 0;
 left: 0;
+position: absolute;
 }
 .titulo{
 font-family: 'abel', 'lato';
@@ -27,9 +27,12 @@ color: #02D7DA;
     font-family: 'abel', 'lato';
     background-color: rgb(233, 229, 229);
     margin-top: 300px;
-    margin-left: 280px;
+    margin-left: 195px;
 }
 
 ::-webkit-input-placeholder{
     color:rgb(128, 173, 201);
+}
+.container{
+    
 }

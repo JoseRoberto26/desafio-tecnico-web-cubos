@@ -20,6 +20,8 @@
     float: right;
     width: 79%;
     background-color: rgb(233, 229, 229);
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 h1{
