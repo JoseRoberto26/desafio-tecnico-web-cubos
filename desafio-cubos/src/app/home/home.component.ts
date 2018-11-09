@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MovieDBService } from '../service/movieDBService';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-home',
@@ -17,13 +18,13 @@ export class HomeComponent implements OnInit {
   textoBusca: FormControl = new FormControl();
   idFilme: String; 
   p: number = 1;
+  dataFormatada;
 
   ngOnInit() {
     //this.buscarFilmes();
     this.textoBusca.valueChanges.subscribe( campoBusca =>
       this.movieService.procuraFilme(campoBusca).subscribe(response =>{
-        this.resultList = response.results
-        console.log(this.resultList);  
+        this.resultList = response.results 
       }))
   }
 

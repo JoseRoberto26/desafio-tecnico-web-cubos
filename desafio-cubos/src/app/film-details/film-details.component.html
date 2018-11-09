@@ -3,7 +3,7 @@
   <div class="header-container">
     <header class="headerTitle">
       <h1>{{filme.title}}</h1>
-      <p class="text-data">{{filme.release_date}}</p>
+      <p class="text-data">{{dataFormatada}}</p>
     </header>
   </div>
 
@@ -23,12 +23,12 @@
 
           <div class="title-value">
             <h4>Situação </h4>
-            <p>{{filme.status}}</p>
+            <p>{{status}}</p>
           </div>
 
           <div class="title-value">
             <h4>Idioma</h4>
-            <p>{{filme.original_language}}</p>
+            <p>{{idioma}}</p>
           </div>
 
           <div class="title-value">
@@ -38,44 +38,40 @@
 
           <div class="title-value">
             <h4>Orçamento</h4>
-            <p>{{filme.budget}}</p>
+            <p>U${{filme.budget}}</p>
           </div>
 
           <div class="title-value">
             <h4>Receita</h4>
-            <p>{{filme.budget}}</p>
+            <p>U${{filme.revenue}}</p>
           </div>
 
           <div class="title-value">
             <h4>Lucro</h4>
-            <p>{{filme.budget}}</p>
+            <p>U${{lucroFilme}}</p>
           </div>
 
         </div>
       </div>
       <div class="score-genre-box">
 
-          <div class="genres">
-            <p>Teste</p>
-          </div>
-  
-          <div class="score">
-  
-            <img class="score-img" src="../../assets/score-img.png">
-            <p class="score-value">{{filme.vote_average}}%</p>
-  
-          </div>
+        <div class="genres">
+          <h4 *ngFor="let gen of generos">
+            {{gen.name}}
+          </h4>
         </div>
+        <h4 class="scoreTxt">{{mediaNota}}%</h4>
+      </div>
     </article>
     <div class="img-box">
 
       <img class="poster" src="http://image.tmdb.org/t/p/w185/{{filme.poster_path}}">
-    
+
     </div>
 
   </section>
 
-  <!-- Video -->
-   <iframe [src]='domSanitizer.bypassSecurityTrustResourceUrl(trailer)' frameborder="0" allowfullscreen></iframe>
+  <!-- Video<iframe [src]='domSanitizer.bypassSecurityTrustResourceUrl(trailer)' frameborder="0" allowfullscreen></iframe> -->
+
 
 </div>

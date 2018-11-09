@@ -13,6 +13,8 @@ import { JsonpModule } from '@angular/http';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { GeneroComponentComponent } from './shared/genero-component/genero-component.component';
+import { ScoreComponentComponent } from './shared/score-component/score-component.component';
 
 
 @NgModule({
@@ -20,7 +22,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     AppComponent,
     FilmDetailsComponent,
     ItemFilmeComponent, 
-    PagenotfoundComponent, HomeComponent, HeaderComponent,
+    PagenotfoundComponent, HomeComponent, HeaderComponent, GeneroComponentComponent, ScoreComponentComponent,
     
   ],
   imports: [

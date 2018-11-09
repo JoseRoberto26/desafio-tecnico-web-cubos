@@ -1,30 +1,62 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieDBService } from '../service/movieDBService';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { DomSanitizer} from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-film-details',
   templateUrl: './film-details.component.html',
   styleUrls: ['./film-details.component.css']
 })
-export class FilmDetailsComponent  {
+export class FilmDetailsComponent {
   filme: any;
   trailer: any;
+  dataFormatada;
+  generos: Array<any>;
+  lucroFilme;
+  status;
+  idioma;
+  mediaNota;
 
-  constructor(private movieService: MovieDBService, public domSanitizer: DomSanitizer, private route: ActivatedRoute) { 
-  this.route.params.subscribe(params => {
-      let id =  params['idFilme'];
-      console.log("id" + id);
-      this.movieService.getFilme(id).subscribe(response =>{
+  constructor(private movieService: MovieDBService, public domSanitizer: DomSanitizer, private route: ActivatedRoute) {
+    this.route.params.subscribe(params => {
+      let id = params['idFilme'];
+      this.movieService.getFilme(id).subscribe(response => {
         this.filme = response;
+        this.mediaNota = this.filme.vote_average * 10;
         console.log(this.filme);
+        if(this.filme.original_language == "en"){
+            this.idioma = "Inglês";
+        }
+        else if(this.filme.original_language == "fr"){
+          this.idioma = "Francês";
+        }
+        else if(this.filme.original_language == "es"){
+          this.idioma = "Espanhol";
+        }
+        else if(this.filme.original_language == "ru"){
+          this.idioma == "Russo";
+        }
+        else if(this.filme.original_language == "pt"){
+          this.idioma == "Português";
+        } 
+        this.generos = this.filme.genres;
+        console.log(this.generos);
+        this.dataFormatada = moment(this.filme.release_date.toString()).format("DD/MM/YYYY");
+        this.lucroFilme = this.filme.revenue - this.filme.budget;
+        if(this.filme.status == "Released"){
+          this.status = "Lançado";
+        }
+        else if (this.filme.status == "Post Production"){
+          this.status = "Pós-Produção";
+        }
       })
-      this.movieService.getTrailer(id).subscribe(response =>{
+      this.movieService.getTrailer(id).subscribe(response => {
         this.trailer = 'https://www.youtube.com/embed/' + response.results[0].key;
-     console.log("trailer" + this.trailer); });
+      });
     });
 
   }
-  
+
 }
