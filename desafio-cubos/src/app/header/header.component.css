@@ -1,0 +1,15 @@
+.box-titulo{
+    background-color: #106A99;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding: 15px;
+    }
+    .titulo{
+    font-family: 'abel', 'lato';
+    font-size: 30px;
+    color: rgb(6, 241, 245);
+    margin: 0;
+    }

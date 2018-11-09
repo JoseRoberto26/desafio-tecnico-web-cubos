@@ -12,31 +12,12 @@ import { FormControl } from '@angular/forms';
 export class AppComponent implements OnInit {
   title = 'desafio-cubos';
 
-  resultList: Array<Object>;
-  stringBusca: string;
-  textoBusca: FormControl = new FormControl();
+  
 
-  constructor(private movieService: MovieDBService, private router: Router){}
+  constructor(){}
 
-ngOnInit(){
-//this.buscarFilmes();
-this.textoBusca.valueChanges.subscribe( campoBusca =>
-this.movieService.procuraFilme(campoBusca).subscribe(response =>{
-  this.resultList = response.results
-}))
-}
-
-buscarFilmes(){
-  this.movieService.procuraFilme(this.stringBusca).subscribe( response =>{
-    this.resultList = response;
-    console.log(this.resultList);
-  })
-}
-
-informacoesFilme(id: string){
-  this.router.navigate(['/filme', id]);
-}
-
-
+  ngOnInit(){
+    
+  }
 
 }

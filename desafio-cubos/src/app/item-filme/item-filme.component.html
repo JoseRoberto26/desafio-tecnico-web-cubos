@@ -1,13 +1,15 @@
-<div class="container-box">
-    <img class="filme-img" src="../../assets/not-found.png"> 
-  <div class="filme-header">
-    <h1>Titulo</h1>
-  </div>
-  <div class="filme-body">
-      <p>Data</p>
-    <p>Descrição</p>
-    <!--<ngfor>
-      <p>Tags</p>
-    </ngfor> -->
-  </div>
+<div class ="container">
+
+<section class="section-box">
+    <img class="filme-img" src="http://image.tmdb.org/t/p/w185{{pathPoster}}"> 
+  <article class="filme-body">
+      <header class="filme-header">
+          <img class="score-img" src="../../assets/score-img.png">
+          <p class="score">{{mediaNota}}%</p>
+          <p  class="titulo">{{tituloFilme}}</p>
+        </header>
+      <p class="data">{{dataLancamento}}</p>
+    <h4 class="sinopse">{{sinopseFilme}}</h4>
+  </article>
+</section>
 </div>

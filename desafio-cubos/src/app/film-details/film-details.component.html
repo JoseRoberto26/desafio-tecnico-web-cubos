@@ -1,52 +1,81 @@
+<div class="main-container">
 
-<div class="container">
-
-<header class="box-titulo">
-    <p class="titulo">Movies</p>
-  </header>
-
-
-<body class = "details-body">
-
-  <div class="body-header">
-    <h1>Titulo</h1>
-    <p class="text-data">Data</p>
+  <div class="header-container">
+    <header class="headerTitle">
+      <h1>{{filme.title}}</h1>
+      <p class="text-data">{{filme.release_date}}</p>
+    </header>
   </div>
 
-  <div class="body-details">
-    <div class="body-details-sinopse">
-    <h1>Sinopse</h1>
-    <p>Lorem ipsum</p>
-  </div>
+  <section class="body-container">
 
-    <div class="body-details-info">
-      <h1>Informações</h1>
-      <div class="info-line">
-        <h1>Situação</h1>
-        <h1>Idioma</h1>
-        <h1>Duração</h1>
-        <h1>Orçamento</h1>
-        <h1>Receita</h1>
-        <h1>Lucro</h1>
+    <article class="details-box">
+
+      <div class="sinopse-box">
+        <h3>Sinopse</h3>
+        <p>{{filme.overview}}</p>
       </div>
+
+      <div class="info-box">
+        <h3>Informações</h3>
+
+        <div class="info-line">
+
+          <div class="title-value">
+            <h4>Situação </h4>
+            <p>{{filme.status}}</p>
+          </div>
+
+          <div class="title-value">
+            <h4>Idioma</h4>
+            <p>{{filme.original_language}}</p>
+          </div>
+
+          <div class="title-value">
+            <h4>Duração</h4>
+            <p>{{filme.runtime}} minutos</p>
+          </div>
+
+          <div class="title-value">
+            <h4>Orçamento</h4>
+            <p>{{filme.budget}}</p>
+          </div>
+
+          <div class="title-value">
+            <h4>Receita</h4>
+            <p>{{filme.budget}}</p>
+          </div>
+
+          <div class="title-value">
+            <h4>Lucro</h4>
+            <p>{{filme.budget}}</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="score-genre-box">
+
+          <div class="genres">
+            <p>Teste</p>
+          </div>
+  
+          <div class="score">
+  
+            <img class="score-img" src="../../assets/score-img.png">
+            <p class="score-value">{{filme.vote_average}}%</p>
+  
+          </div>
+        </div>
+    </article>
+    <div class="img-box">
+
+      <img class="poster" src="http://image.tmdb.org/t/p/w185/{{filme.poster_path}}">
+    
     </div>
 
-    <img src="../../assets/not-found.png">
-<!--<ngfor>
-      <p>Tags</p>
-    </ngfor> -->
-
-    <!--<img src="score-img">-->
-  </div>
+  </section>
 
   <!-- Video -->
-  <iframe [src]='safeURL' frameborder="0" allowfullscreen></iframe>
-
-</body>
-
-
-
-
-
+   <iframe [src]='domSanitizer.bypassSecurityTrustResourceUrl(trailer)' frameborder="0" allowfullscreen></iframe>
 
 </div>

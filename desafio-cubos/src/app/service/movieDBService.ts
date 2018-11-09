@@ -4,7 +4,9 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+  })
 export class MovieDBService {
     apikey: string;
     baseUrlApi: string;
@@ -15,16 +17,16 @@ export class MovieDBService {
     }
 
     procuraFilme(strBusca: string): Observable<any> {
-      return  this.http.get<any>(this.baseUrlApi + '&language=en-US&query=' +  strBusca + '&page=1&include_adult=true');
+      return  this.http.get<any>(this.baseUrlApi + '&language=pt-BR&query=' +  strBusca + '&page=1&include_adult=true');
     }
 
-    getFilme(id: string) {
+    getFilme(id): Observable<any> {
         
-        return this.http.get<any>('https://api.themoviedb.org/3/movie/' + id + '?&api_key=' + this.apikey);
+        return this.http.get<any>('https://api.themoviedb.org/3/movie/' + id + '?api_key=' + this.apikey+ '&language=pt-BR');
             
     }
 
-    getTrailer(id: string): Observable<any>{
+    getTrailer(id): Observable<any>{
        return this.http.get<any>('https://api.themoviedb.org/3/movie/'+id+'/videos?api_key='+this.apikey+'&language=pt-BR')
     }
 }

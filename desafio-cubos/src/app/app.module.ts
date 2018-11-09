@@ -10,29 +10,29 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MovieDBService } from './service/movieDBService';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { JsonpModule } from '@angular/http';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
-
-const appRoutes: Routes =[
-  {path: ':id', component: FilmDetailsComponent},
-  {path: '**', component: PagenotfoundComponent}
-];
 
 @NgModule({
   declarations: [
     AppComponent,
     FilmDetailsComponent,
     ItemFilmeComponent, 
-    PagenotfoundComponent,
+    PagenotfoundComponent, HomeComponent, HeaderComponent,
+    
   ],
   imports: [
-    RouterModule.forRoot(appRoutes),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    JsonpModule
+    JsonpModule,
+    AppRoutingModule,
+    NgxPaginationModule,
   ],
   providers: [MovieDBService],
   bootstrap: [AppComponent]

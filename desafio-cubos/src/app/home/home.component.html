@@ -1,0 +1,19 @@
+<section class="box-body">
+  <div class="search-bar">
+    <input type="text" class="busca-filme" placeholder="Busque um filme por nome, ano ou gênero..." autofocus [formControl]="textoBusca">
+  </div>
+  <div *ngFor="let movie of resultList  | paginate: { itemsPerPage: 5, currentPage: p }" class="container-filme" (click)="informacoesFilme(movie.id)">
+    <app-item-filme [tituloFilme]=movie.title [dataLancamento]=movie.release_date [sinopseFilme]=movie.overview [pathPoster]=movie.poster_path
+      [mediaNota]=movie.vote_average></app-item-filme>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <pagination-controls class = "paginacao" (pageChange)="p = $event"></pagination-controls>
+
+</section>
