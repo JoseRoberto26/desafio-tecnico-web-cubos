@@ -14,13 +14,13 @@ export class AppComponent implements OnInit {
 
   resultList: Array<Object>;
   stringBusca: string;
-  campoBusca: FormControl = new FormControl();
+  textoBusca: FormControl = new FormControl();
 
   constructor(private movieService: MovieDBService, private router: Router){}
 
 ngOnInit(){
-this.buscarFilmes();
-this.campoBusca.valueChanges.subscribe( campoBusca =>
+//this.buscarFilmes();
+this.textoBusca.valueChanges.subscribe( campoBusca =>
 this.movieService.procuraFilme(campoBusca).subscribe(response =>{
   this.resultList = response.results
 }))

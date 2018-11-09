@@ -7,18 +7,20 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class MovieDBService {
     apikey: string;
-
-    constructor(private http: HttpClient) {
-        this.apikey = '805c1c38575578261da65b6dd5dcfc90';
+    baseUrlApi: string;
+    constructor(private http: HttpClient, private jsonp: Jsonp) {
+        //Inserir sua apikey aqui
+        this.apikey = '5a240d5ac38592ee034f80a46ddeadbd';
+        this.baseUrlApi  = 'https://api.themoviedb.org/3/search/movie?api_key='+this.apikey;
     }
 
     procuraFilme(strBusca: string): Observable<any> {
-      return  this.http.get<any>('https://api.themoviedb.org/3/search/movie?callback=JSONP_CALLBACK&query=' + strBusca + '&sort_by=popularity.desc&api_key=' + this.apikey)
+      return  this.http.get<any>(this.baseUrlApi + '&language=en-US&query=' +  strBusca + '&page=1&include_adult=true');
     }
 
     getFilme(id: string) {
         
-        return this.http.get<any>('https://api.themoviedb.org/3/movie/' + id + '?callback=JSONP_CALLBACK&api_key=' + this.apikey)
+        return this.http.get<any>('https://api.themoviedb.org/3/movie/' + id + '?&api_key=' + this.apikey);
             
     }
 

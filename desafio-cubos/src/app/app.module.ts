@@ -8,7 +8,8 @@ import { ItemFilmeComponent } from './item-filme/item-filme.component';
 import { RouterModule, Routes } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MovieDBService } from './service/movieDBService';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { JsonpModule } from '@angular/http';
 
 
 const appRoutes: Routes =[
@@ -30,6 +31,8 @@ const appRoutes: Routes =[
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    HttpClientJsonpModule,
+    JsonpModule
   ],
   providers: [MovieDBService],
   bootstrap: [AppComponent]
