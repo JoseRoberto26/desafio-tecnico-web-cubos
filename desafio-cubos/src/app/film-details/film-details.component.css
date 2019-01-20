@@ -30,6 +30,10 @@
     margin-left:40px;
 }
 
+.synopsis-text, .information-text{
+    border-bottom: 2px solid rgb(6, 241, 245);;
+}
+
 .score-genre-box{
     display: flex;
     flex-direction: row;
@@ -68,7 +72,6 @@
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
 }
 
 .text-data{

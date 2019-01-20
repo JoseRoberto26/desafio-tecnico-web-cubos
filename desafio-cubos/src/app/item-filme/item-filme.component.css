@@ -51,6 +51,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     flex-grow: 0;
+    cursor: pointer;
 }
 
 

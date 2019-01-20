@@ -17,7 +17,7 @@ export class MovieDBService {
     }
 
     procuraFilme(strBusca: string): Observable<any> {
-      return  this.http.get<any>(this.baseUrlApi + '&language=pt-BR&query=' +  strBusca + '&page=1&include_adult=true');
+      return  this.http.get<any>(this.baseUrlApi + '&language=pt-BR&query=' +  strBusca + '&page=1');
     }
 
     getFilme(id): Observable<any> {

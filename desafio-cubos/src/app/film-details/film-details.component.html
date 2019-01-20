@@ -12,43 +12,43 @@
     <article class="details-box">
 
       <div class="sinopse-box">
-        <h3>Sinopse</h3>
-        <p>{{filme.overview}}</p>
+        <h3 class="synopsis-text">Sinopse</h3>
+        <p>{{filme.overview  || 'Não informado'}}</p>
       </div>
 
       <div class="info-box">
-        <h3>Informações</h3>
+        <h3 class = "information-text">Informações</h3>
 
         <div class="info-line">
 
           <div class="title-value">
             <h4>Situação </h4>
-            <p>{{status}}</p>
+            <p>{{status  || 'Não informado'}}</p>
           </div>
 
           <div class="title-value">
             <h4>Idioma</h4>
-            <p>{{idioma}}</p>
+            <p>{{idioma  || 'Não informado'}}</p>
           </div>
 
           <div class="title-value">
             <h4>Duração</h4>
-            <p>{{filme.runtime}} minutos</p>
+            <p>{{filme.runtime  || 'Não informado'}} minutos</p>
           </div>
 
           <div class="title-value">
             <h4>Orçamento</h4>
-            <p>U${{filme.budget}}</p>
+            <p>{{'U$' + filme.budget  || 'Não informado'}}</p>
           </div>
 
           <div class="title-value">
             <h4>Receita</h4>
-            <p>U${{filme.revenue}}</p>
+            <p>{{'U$' + filme.revenue  || 'Não informado'}}</p>
           </div>
 
           <div class="title-value">
             <h4>Lucro</h4>
-            <p>U${{lucroFilme}}</p>
+            <p>{{'U$' + lucroFilme  || 'Não informado'}}</p>
           </div>
 
         </div>

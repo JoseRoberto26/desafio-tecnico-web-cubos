@@ -25,7 +25,6 @@ export class FilmDetailsComponent {
       this.movieService.getFilme(id).subscribe(response => {
         this.filme = response;
         this.mediaNota = this.filme.vote_average * 10;
-        console.log(this.filme);
         if(this.filme.original_language == "en"){
             this.idioma = "Inglês";
         }
@@ -42,7 +41,6 @@ export class FilmDetailsComponent {
           this.idioma == "Português";
         } 
         this.generos = this.filme.genres;
-        console.log(this.generos);
         this.dataFormatada = moment(this.filme.release_date.toString()).format("DD/MM/YYYY");
         this.lucroFilme = this.filme.revenue - this.filme.budget;
         if(this.filme.status == "Released"){
