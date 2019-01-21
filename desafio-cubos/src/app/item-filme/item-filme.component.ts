@@ -16,14 +16,18 @@ export class ItemFilmeComponent implements OnInit {
 @Input() pathPoster: String;
 @Input() mediaNota: number;
 @Input() contagemVoto: number;
+@Input() idsGeneros: Array<any>;
 @Input() generos: Array<any>;
 pathPosterAux: String;
+generosDoFilme: Array<String>;
 
   ngOnInit() {
+    this.generosDoFilme = [];
     this.dataLancamento = moment(this.dataLancamento.toString()).format("DD/MM/YYYY");
     this.mediaNota = this.mediaNota * 10;
-
-    console.log(this.generos);
+    this.idsGeneros.forEach(id =>{
+      this.checaGenero(id);
+    })
     if(!this.pathPoster){
       this.pathPoster = "../../assets/not-found.png";
     }
@@ -31,7 +35,15 @@ pathPosterAux: String;
       this.pathPosterAux = this.pathPoster;
       this.pathPoster = "http://image.tmdb.org/t/p/w185" +this.pathPosterAux;
     }
-
   }
+  checaGenero(id: number){
+    this.generos.forEach(genero =>{
+      if(genero.id == id){
+        this.generosDoFilme.push(genero.name);
+      }
+    })
+  }
+
+  
 
 }

@@ -4,16 +4,10 @@
   </div>
   <div *ngFor="let movie of resultList  | paginate: { itemsPerPage: 5, currentPage: p }" class="container-filme" (click)="informacoesFilme(movie.id)">
     <app-item-filme [tituloFilme]=movie.title [dataLancamento]=movie.release_date [sinopseFilme]=movie.overview [pathPoster]=movie.poster_path
-      [mediaNota]=movie.vote_average></app-item-filme>
+      [mediaNota]=movie.vote_average [idsGeneros]=movie.genre_ids [generos]=this.todosGeneros></app-item-filme>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <pagination-controls class = "paginacao" (pageChange)="p = $event"></pagination-controls>
-
+  
+  <div class="paginacao">
+  <pagination-controls directionLinks = "false" responsive="true" (pageChange)="p = $event"></pagination-controls>
+</div>
 </section>

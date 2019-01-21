@@ -43,6 +43,10 @@ export class FilmDetailsComponent {
         this.generos = this.filme.genres;
         this.dataFormatada = moment(this.filme.release_date.toString()).format("DD/MM/YYYY");
         this.lucroFilme = this.filme.revenue - this.filme.budget;
+        this.lucroFilme = this.formatacaoDolar(this.lucroFilme);
+        this.filme.revenue = this.formatacaoDolar(this.filme.revenue);
+        this.filme.budget = this.formatacaoDolar(this.filme.budget);
+        this.filme.runtime = this.duracaoEmHoras(this.filme.runtime);
         if(this.filme.status == "Released"){
           this.status = "Lançado";
         }
@@ -62,5 +66,18 @@ export class FilmDetailsComponent {
     });
 
   }
+
+  formatacaoDolar(valor)
+    {
+        if(valor){
+            return 'U$'+ valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + ',00';    
+        }
+    }
+
+    duracaoEmHoras(duracao){
+      let mins = duracao / 60;
+      let horas = (duracao-mins)/60;
+      return Math.round(horas).toString() + "h " + (Math.round(mins)<10?"0":"") + Math.round(mins).toString() + "min";
+    }
   
 }

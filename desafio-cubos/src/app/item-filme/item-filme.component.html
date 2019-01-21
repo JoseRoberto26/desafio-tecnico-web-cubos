@@ -9,8 +9,10 @@
         </header>
       <p class="data">{{dataLancamento}}</p>
     <h4 class="sinopse">{{sinopseFilme || 'Não informado'}}</h4>
-    <div class="genres">
-        <h4 class ="genre-text">teste</h4>
+    <div class="genres-box">
+    <div class="genres"  *ngFor="let gen of generosDoFilme">
+        <h4 class ="genre-text">{{gen}}</h4>
       </div>
+    </div>
   </article>
 </section>

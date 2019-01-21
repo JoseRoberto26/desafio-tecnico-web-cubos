@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { MovieDBService } from '../service/movieDBService';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
@@ -20,17 +20,18 @@ export class HomeComponent implements OnInit {
   p: number = 1;
   dataFormatada;
   generos: Array<any>;
-  todosGeneros;
+  @Output() todosGeneros: Array<any>;
 
   ngOnInit() {
     this.textoBusca.valueChanges.subscribe( campoBusca =>
       this.movieService.procuraFilme(campoBusca).subscribe(response =>{
         this.resultList = response.results
-        console.log(this.resultList);
+        //console.log(this.resultList);
       }))
 
       this.movieService.getGeneros().subscribe(response => {
-        this.todosGeneros = response.results;
+        this.todosGeneros = response.genres;
+       // console.log(this.todosGeneros);
       })
       
   }

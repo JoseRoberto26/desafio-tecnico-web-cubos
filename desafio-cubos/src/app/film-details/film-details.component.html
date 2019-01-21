@@ -33,30 +33,32 @@
 
           <div class="title-value">
             <h4>Duração</h4>
-            <p>{{filme.runtime  || 'Não informado'}} minutos</p>
+            <p>{{filme.runtime  || 'Não informado'}}</p>
           </div>
 
           <div class="title-value">
             <h4>Orçamento</h4>
-            <p>{{'U$' + filme.budget  || 'Não informado'}}</p>
+            <p>{{ filme.budget  || 'Não informado'}}</p>
           </div>
 
           <div class="title-value">
             <h4>Receita</h4>
-            <p>{{'U$' + filme.revenue  || 'Não informado'}}</p>
+            <p>{{ filme.revenue  || 'Não informado'}}</p>
           </div>
 
           <div class="title-value">
             <h4>Lucro</h4>
-            <p>{{'U$' + lucroFilme  || 'Não informado'}}</p>
+            <p>{{ lucroFilme  || 'Não informado'}}</p>
           </div>
 
         </div>
       </div>
       <div class="score-genre-box">
+        <div class="genres-box">
         <div class="genres" *ngFor="let gen of generos">
           <h4 class ="genre-text"> {{gen.name}}</h4>
         </div>
+      </div>
         <div class="score">
           <img class="score-img" src="../../assets/score-img.png">
           <h4 class="scoreTxt">{{mediaNota}}%</h4>

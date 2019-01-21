@@ -9,3 +9,35 @@
     font-family: abel;
     src: url(assets/Abel-Regular.ttf);
 }
+
+
+
+:root {
+    --first-color: #116193;
+    --second-color: #00e8e4;
+}
+.ngx-pagination a:hover,
+.ngx-pagination button:hover {
+    background: none !important;
+    color: var(--second-color) !important;
+}
+
+.ngx-pagination{
+    font-family: 'abel', 'lato';
+}
+
+.ngx-pagination .current {
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    padding: 0.3875rem 0.925rem !important;
+    cursor: pointer;
+    border: 3px solid var(--second-color);
+    box-shadow: 0 0 0 2px var(--first-color);
+    background: var(--first-color) !important;
+    color: var(--second-color) !important;
+}
+
+.ngx-pagination a {
+    color: var(--first-color) !important;
+    font-size: large;
+}
