@@ -1,15 +1,22 @@
-.box-titulo{
-    background-color: #106A99;
-    width: 100%;
-    text-align: center;
-    top: 0;
-    left: 0;
-    position: absolute;
-    padding: 15px;
+
+    .box-titulo{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
     }
     .titulo{
-    font-family: 'abel', 'lato';
-    font-size: 30px;
-    color: rgb(6, 241, 245);
-    margin: 0;
+        background: var(--first-color);
+        color: var(--second-color);
+        text-align: center;
+        font-size: -webkit-xxx-large;
+        cursor: pointer;
+        font-family: 'abel', 'lato';
+        margin-top: -8px;
+        padding: 1rem;
+        margin-bottom: 3rem;
+    margin-left: -10px;
+    margin-right: -10px;
+    width: auto;
+
     }
+    
