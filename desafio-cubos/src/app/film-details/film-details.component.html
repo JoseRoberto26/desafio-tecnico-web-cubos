@@ -54,13 +54,13 @@
         </div>
       </div>
       <div class="score-genre-box">
-
-        <div class="genres">
-          <h4 *ngFor="let gen of generos">
-            {{gen.name}}
-          </h4>
+        <div class="genres" *ngFor="let gen of generos">
+          <h4 class ="genre-text"> {{gen.name}}</h4>
         </div>
-        <h4 class="scoreTxt">{{mediaNota}}%</h4>
+        <div class="score">
+          <img class="score-img" src="../../assets/score-img.png">
+          <h4 class="scoreTxt">{{mediaNota}}%</h4>
+        </div>
       </div>
     </article>
     <div class="img-box">
@@ -71,7 +71,8 @@
 
   </section>
 
-  <!-- Video<iframe [src]='domSanitizer.bypassSecurityTrustResourceUrl(trailer)' frameborder="0" allowfullscreen></iframe> -->
+</div>
 
-
+<div *ngIf="trailer != null" class="trailer-box">
+<iframe class="trailer" [src]="this.trailer" frameborder="0" allowfullscreen></iframe>
 </div>

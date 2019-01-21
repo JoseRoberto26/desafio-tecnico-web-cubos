@@ -9,13 +9,42 @@
     display: flex;
     flex-direction: row;
 }
+.score-img{
+    height: 130px;
+    position: absolute;
+    transform: translate(210px, 100px);
+}
 
-.genres{
+.score-genre-box{
+    width: 1400px;
+    justify-content: flex-start;
+}
+
+ .score{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     height: 200px;
     width: 400px;
+}
+.genres{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 200px;
+    width: 200px;
+    padding-top: 70px;
+}
+
+.genre-text{
+    border-radius: 20px;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    background: white;
+    border-style: solid;
+    border-width: 2px;
+    padding: 10px;
 }
 
 .details-box{
@@ -28,21 +57,11 @@
 
 .sinopse-box{
     margin-left:40px;
+    width: 1400px;
 }
 
 .synopsis-text, .information-text{
     border-bottom: 2px solid rgb(6, 241, 245);;
-}
-
-.score-genre-box{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-flow: row;
-    align-items: flex-start;
-    align-content: flex-start;
-    margin-top: 10%;
-    width: 80%;
 }
 
 .title-value{
@@ -53,6 +72,14 @@
     flex-flow: column;
 }
 
+.trailer{
+    width: 100%;
+    height: 800px;
+}
+.trailer-box{
+    display: flex;
+    justify-content: center;
+}
 
 .header-container{
     background-color: rgb(218, 216, 216);
@@ -61,14 +88,20 @@
 }
 .text-data, h1, h3, p, h4, .scoreTxt{
     font-family: 'abel', 'lato';
-
 }
 
+.scoreTxt{
+    transform: translate(210px, -22px);
+    margin-bottom: 0px;
+    color: rgb(6, 241, 245);
+    font-size: 28px;
+}
 .info-box{
     margin-left: 40px;
+    width: 1400px;
 }
 
-.info-line{
+.info-line,  .score-genre-box{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
@@ -89,8 +122,6 @@ h1{
     margin-left: 40px;
 }
 
-
-
 .poster{
     width: 400px;
     height: 500px;
@@ -100,7 +131,6 @@ p{
     color: #5E5E5E;
     font-weight: bold;
 }
-
 
 h4, p{
     margin: auto;

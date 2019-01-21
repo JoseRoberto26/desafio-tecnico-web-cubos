@@ -19,27 +19,25 @@ export class HomeComponent implements OnInit {
   idFilme: String; 
   p: number = 1;
   dataFormatada;
+  generos: Array<any>;
+  todosGeneros;
 
   ngOnInit() {
-    //this.buscarFilmes();
     this.textoBusca.valueChanges.subscribe( campoBusca =>
       this.movieService.procuraFilme(campoBusca).subscribe(response =>{
-        this.resultList = response.results 
+        this.resultList = response.results
+        console.log(this.resultList);
       }))
+
+      this.movieService.getGeneros().subscribe(response => {
+        this.todosGeneros = response.results;
+      })
+      
   }
 
-    buscarFilmes(){
-      this.movieService.procuraFilme(this.stringBusca).subscribe( response =>{
-        this.resultList = response;
-        console.log(this.resultList);
-      })
-    }
-    
+
     informacoesFilme(id){
       this.router.navigate(['/filme', id]);
     }
     
-    
-    
-
 }

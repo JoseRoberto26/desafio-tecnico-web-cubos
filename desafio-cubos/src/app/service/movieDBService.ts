@@ -29,4 +29,8 @@ export class MovieDBService {
     getTrailer(id): Observable<any>{
        return this.http.get<any>('https://api.themoviedb.org/3/movie/'+id+'/videos?api_key='+this.apikey+'&language=pt-BR')
     }
+
+    getGeneros(): Observable<any>{
+        return this.http.get<any>('https://api.themoviedb.org/3/genre/movie/list?api_key='+this.apikey+'&language=pt-BR');
+    }
 }
