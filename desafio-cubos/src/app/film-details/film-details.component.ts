@@ -55,11 +55,9 @@ export class FilmDetailsComponent {
         }
       })
       this.movieService.getTrailer(id).subscribe(response => {
-        console.log(response);
         response.results.forEach(trailer => {
           if(trailer){
             this.trailer = this.domSanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+trailer.key);
-            //'https://www.youtube.com/embed/'+trailer.key;
           }
         })
       });

@@ -27,10 +27,13 @@
         width: 70%;
         font-family: 'abel', 'lato';
         background-color: rgb(233, 229, 229);
+        transform: translate(0px, -80px);
+
     }
     
     ::-webkit-input-placeholder{
         color:rgb(128, 173, 201);
+        padding-left: 20px;
     }
 
     .search-bar, .container-filme{

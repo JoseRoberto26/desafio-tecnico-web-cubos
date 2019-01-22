@@ -15,6 +15,8 @@ import { HeaderComponent } from './header/header.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { GeneroComponentComponent } from './shared/genero-component/genero-component.component';
 import { ScoreComponentComponent } from './shared/score-component/score-component.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import { ScoreComponentComponent } from './shared/score-component/score-componen
     JsonpModule,
     AppRoutingModule,
     NgxPaginationModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [MovieDBService],
   bootstrap: [AppComponent]
